@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo de Página HTML</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins';
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #DCC59B;
             color: white;
             padding: 15px;
             text-align: center;
         }
+
+        nav {
+            background-color: #cbb07f;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
         main {
             padding: 20px;
         }
@@ -24,14 +46,14 @@
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 3px;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
         .btn {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #DCC59B;
+            color: black;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
@@ -39,7 +61,21 @@
             display: inline-block;
         }
         .btn:hover {
-            background-color: #45a049;
+            background-color: #DCC59B;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer{
+                position: relative;
+            }
         }
     </style>
 </head>
@@ -47,21 +83,29 @@
 <header>
     <h1>Bem-vindo ao Projeto de Pull Request</h1>
 </header>
+<nav>
+    <a href="#">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#funcionalidades">Funcionalidades</a>
+    <a href="forms.html">Formulário</a>
+    <a href="#lista">Lista de Tarefas</a>
+</nav>
 <main>
     <section>
-        <h2>Sobre o Projeto</h2>
+        <h2 id="sobre">Sobre o Projeto</h2>
         <p>Este projeto tem como objetivo ensinar o fluxo de trabalho do GitHub, incluindo a criação de branches, commits, Pull Requests e revisões de código.</p>
     </section>
     <section>
-        <h2>Funcionalidades</h2>
+        <h2 id="funcionalidades">Funcionalidades</h2>
         <ul>
             <li>Visualização de páginas HTML simples.</li>
             <li>Interação com formulários.</li>
-            <li><a href="forms.html">Design simples e responsivo.</a></li>
+            <li>Design simples e responsivo.</li>
         </ul>
     </section>
+    <button class="btn"><a href="forms.html"><strong>Clique aqui para aprender mais!</strong></a></button>
     <section>
-        <h2>Lista de Tarefas</h2>
+        <h2 id="lista">Lista de Tarefas</h2>
         <p>O site é simples, feito para treinar a funcionalidade Pull Request do GitHub. Portanto, você consegue fazer alguns testes:</p>
         <ul>
             <li>Tente utilizar a navbar presente no Header</li>
@@ -69,7 +113,6 @@
             <li>Aprecie o CSS dessa esbelta página</li>
         </ul>
     </section>
-    <button class="btn">Clique aqui para aprender mais!</button>
 </main>
 <footer>
     <p>&copy; 2025 Projeto GitHub PR - Todos os direitos reservados.</p>
